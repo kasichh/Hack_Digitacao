@@ -16,20 +16,16 @@ driver.find_element(By.CLASS_NAME, 'X6jBH4QQC438WF7fZYzD').click()
 # driver.find_element(By.XPATH, '//div[contains (@class, "pklLOFTYXcQTUpcTaOg7")]').click()
 pyautogui.moveTo(886, 513)
 pyautogui.click()
-letras = driver.find_elements(By.XPATH, '//div[contains (@class, "pklLOFTYXcQTUpcTaOg7")]/span')
-time.sleep(1)
-lista = list()
+while True:
+    letras = driver.find_elements(By.XPATH, '//div[contains (@class, "pklLOFTYXcQTUpcTaOg7")]/span')
+    time.sleep(1)
+    lista = []
 
-for palavra in letras:
-    letra = palavra.text
-    if letra == '␣':
-        letra = 'space'
-    lista.append(str(letra))
+    for palavra in letras:
+        letra = palavra.text
+        if letra == '␣':
+            letra = 'space'
+        lista.append(str(letra))
 
-for letra in lista:
-    pyautogui.press(letra)
-
-
-
-
-
+    for letra in lista:
+        pyautogui.press(letra)
